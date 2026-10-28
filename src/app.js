@@ -3,6 +3,8 @@ const healthRoutes = require('./routes/health.routes');
 const authRoutes = require('./routes/auth.routes');
 const productRoutes = require('./routes/product.routes');
 const orderRoutes = require('./routes/order.routes');
+const shipmentRoutes = require('./routes/shipment.routes');
+const membershipRoutes = require('./routes/membership.routes');
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use('/health', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/shipments', shipmentRoutes);
+app.use('/api/memberships', membershipRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Không tìm thấy đường dẫn' });
